@@ -1,0 +1,12 @@
+package step01;
+
+import javax.annotation.processing.Generated;
+
+@Getter
+public class Person4 {
+	String name;
+	int age;
+		
+	}
+
+}

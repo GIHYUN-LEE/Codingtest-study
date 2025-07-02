@@ -1,0 +1,14 @@
+
+package step01;
+
+public class Person3 {
+
+	int a=3;
+	
+	public static void main(String[] args) {
+		Person3 p1=new Person3();
+		System.out.println(p1);
+
+	}
+
+}

@@ -1,0 +1,31 @@
+/* 학습
+ * 1. 타입
+ *    ㆍ 기본타입(8가지), 참조타입(non-premitive)
+ *    ㆍ 변수에 타입을 반영
+ *       - 선언 위치
+ *          1. 로컬 변수
+ *             - 생성자와 메소드() 또는 {} 내부에 선언
+ *             - 사용시점 : 호출되었을 때만 사용되고 생성자나 메소드가 종료되면 소멸된다.
+ *             - 임시변수
+ *          2. 멤버 변수
+ *             - class{} 내부에 선언
+ *             - new와 생성자 조합으로 생성되는 객체의 데이터 실체 구성요소(사용 시점 : 객체가 존재하는 경우에만)
+ *          
+ * *클래스 구성요소 : 멤버 변수, 생성자, 메소드, static{}     
+ * *maven 쓰면서 target 폴더에 bin 파일 만들어짐     
+ */
+
+package step02;
+
+class Person{
+	
+}
+
+public class Type {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

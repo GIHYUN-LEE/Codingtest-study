@@ -1,0 +1,101 @@
+/*학습내용
+ * 1. 메소드 구현 및 호출 문법
+ * 2. 기본 syntax
+ *    ㆍ 반환타입 메소드명([arguments]){   / 대괄호는 생략해도 된다는 의미
+ *    	[body]
+ *    }
+ * 3. 메소드만의 주요 키워드
+ *    ㆍ void - 메소드 선언부
+ *    ㆍ return - 메소드 {} 내부에서 사용, 호출한 곳으로 값 주겠다는 의미
+ * 4. 메소드 호출 방식
+ *    ㆍ 객체 생성 후 생성된 객체를 관리하는 변수로 호출
+ *    ㆍ 객체 생성없이 class명.메소드명 문법으로 호출(단, static으로 선언된 메소드만)
+ * 5. API doc 활용(https://devdocs.io/openjdk~17/)
+ *    ㆍjava.lang.Math 클래스의 모든 메소드가 static인 사유?
+ *      - 모든 메소드 기능이 필요한가?
+ *      - 랜덤 산출하는 메소드 기능만 필요한가?
+ *      - 제시자 관점 : 재사용성 극대화, 시스템 성능 고려, 간편 호출에 포커스
+ *        → 필요한 메소드만 단순하게 호출 가능하게 제시
+ * 6. 예시
+ * 	- 호출자가 문자열을 주고 길이값 반환 기능 요청
+ * 		제공 데이터 : 문자열
+ * 		반환 데이터 : int
+ * 		int length(String data){
+ * 			data 변수의 문자열 길이 카운트해서 반환	
+ * 		}
+ * 		이 메소드를 보유한 String 클래스는 객체 생성 의미가 있다? 없다?
+ * 		static int length(String data){
+ * 			data 변수의 문자열 길이 카운트해서 반환	
+ * 		}
+ * 		int length = String.length("김혜경");
+ * 
+ * 	- 이미 존재하는 문자열 객체만의 길이값 반환
+ * 		static int length(){
+ * 			이 메소드를 보유한 객체의 길이 반환
+ * 		}	
+ * 		int length = String.length();  오류
+ * 
+ * - 이미 존재하는 문자열 객체만의 길이값 반환
+ * 		int length(){
+ * 			이 메소드를 보유한 객체의 길이 반환
+ * 		}	
+ * 		String data = "eeeee";
+ * 		int length = data.length();  오류
+ * 
+ *  - 특정 index값 제공하면서 이미 존재하는 문자열 객체의 두번째 한 글짜만 반환
+ * 		? char charAt(int index){
+ * 			return 문자 착출해서 반환
+ * 		}
+ * 		String객체 생성 필수 따라서 static 선언 불가 
+ */
+
+package step02;
+
+public class Methodlab {
+// 두개의 정수 받아서 + 연산 후 출력
+	static void add(int no1, int no2) {
+		System.out.println(no1+no2); //
+	}
+	
+
+	public static void main(String[] args) {
+		Methodlab m = new Methodlab(); // 멤버변수가 없다면 객체 생성을 할 필요가 없다
+		m.add(10, 20);
+		
+		Methodlab.add(40, 80); // static을 썼기에 가능
+		add(20,30); //동일한 클래스라 가능
+		
+		//API 제공 메소드 탐색
+		System.out.println(Math.random());
+		System.out.println(Math.random());
+		System.out.println(Math.max(10, 11));
+		
+		String data="fisa 5기";
+		System.out.println(data.length());
+		System.out.println(data.charAt(5)); // 다섯번째 문자만 출력
+		
+		Person d()=d();
+		
+		
+	
+		
+	}
+	//int값 반환 메소드 / String 반환 / 사용자 정의 반환(Person)
+	int a() {
+		return 3;
+	}
+	String p() {
+		return "기현";
+	}
+	void c() {
+		return; 
+	}
+	static Person d() {
+		return new Person();
+	}
+	
+	// d 호출 후에 반환받은 Person 객체의 name와 age에 값 대입 및 출력
+	
+	
+
+}

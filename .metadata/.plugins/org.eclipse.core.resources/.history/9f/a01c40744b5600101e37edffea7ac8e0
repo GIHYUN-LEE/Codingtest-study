@@ -1,0 +1,29 @@
+/* 학습내용
+ * 1. 변수와 메소드 선언 및 구현을 main 메소드 외부에 개발
+ * 2. main 메소드 내부에서 호출 및 실행
+ * 3. main()
+ *    - 서버가 없는 일반 자바 프로그램의 실행 시작 메소드
+ *    - 
+ */
+
+package step01;
+
+public class Person2 {
+	// 변수 선언 및 초기화
+	String image = "화전동";
+	
+	/* 사용자 정의 메소드 구현
+	 * 기능 : 변수값 포함한 메세지 출력(s.o.p)
+	 * 호출 받으면 일은 하고 값 반환은 안함
+	 * 따라서 void로 호출한 곳으로 반환값이 없다.
+	 * 메소드 문법 : 리턴타입 메소드명(){}
+	 */
+	void printMessage() { //메소드
+		System.out.println("내가 사는 곳은"+image+"입니다.");
+	}
+	
+	public static void main(String[] args) {
+		void i = new printMessage():
+	}
+
+}

@@ -1,0 +1,41 @@
+/*학습내용
+ * 1. static 키워드, 생성자 학습
+ * 2. 생성자
+ *    ㆍ 기능 - 객체 생성 시 호출되는 유일한 요소
+ *    ㆍ 예외 - String 타입은 "" 표기 만으로 자동 객체 생성
+ *          - new 생성자([..])조합으로 객체 생성
+ * 3. 특징
+ *    ㆍ 개발자가 코드로 미 개발 시 기본 생성자만 자동 생성(컴파일 시점) / 기본생성자란 argument가 없는 생성자를 의미
+ *    ㆍ 하나의 클래스에는 () 즉 argument, parameter, 매개변수 등 다른 생성자를 여러개 개발 가능(다중정의=overloading)
+ * 4. 문법
+ *    ㆍ 클래스명과 동일
+ *    ㆍ ([arguments]){[..]}
+ * 5. 클래스 : 멤버변수, 생성자, 메소드, static{}
+ */
+
+package step02;
+
+public class StaticKeywordLab {
+	 //멤버 변수는 실체화되었을 떄 기본값으로 초기화
+	static int no1; //0값으로 자동 초기화  , static 변수는 생성되는 모든 객체가 공유되며 저장위치는 class영역에 저장됨
+	int no2;
+	
+	StaticKeywordLab(){
+		no1+=1; // 0 -> 1 -> 2 -> 3...
+		no2+=1; // 1
+	}
+//	public static void main(String[] args) {
+//		System.out.println(no1); //0
+//		System.out.println(StaticKeywordLab.no1); //0
+//		
+//		StaticKeywordLab s = new StaticKeywordLab();
+//		System.out.println(s.no2); //1
+//		
+//		StaticKeywordLab s2 = new StaticKeywordLab();
+//		System.out.println(s2.no2); //1
+//		
+//		System.out.println(no1); //2
+//		System.out.println(StaticKeywordLab.no1); //2
+//	}
+
+}

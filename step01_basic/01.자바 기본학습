@@ -1,0 +1,36 @@
+250702
+
+1. 메소드 구현 및 호출
+   - 데이터 타입의 이해
+2. 생성자 구현 및 호출
+3. 다중 클래스 개발 후 서로 호출 사용
+4. MVC패턴 구조의 클래스 형식
+   - (Framework) Spring / 장고 / Vue, React(Front end framework)
+
+* 데이터 타입
+  - 기본 타입 : 8가지, built-in 타입 (정수형-byte(8bit), short(16), int(32), long(64)/문자형-char(16)/실수형-float(32), double(64)/논리형-boolean(8))
+  - 객체 타입(Ref type)
+    ㆍ API(라이브러리) 제공 타입 & 사용자 정의 타입 / 예) String(JDK 내부에서 제공), 어제 Person(사용자 정의)
+       → 전제조건 : 반드시 class 또는 interface라는 것으로 존재해야함
+       
+* 파이썬도 기초를 알아야함
+5. MVC(Model View Controller) 구조의 형식
+   - Model : 순수자바 코드로 개발
+   - View : 화면처리 언어로 개발(html/css/java/jsp)
+     ㆍ브라우저 자체에서 실행되는 언어 : html/css/javascript
+     ㆍ브라우저에 자바 데이터 결과를 출력하기 위한 언어
+       - 실행은 서버(tomcat_무료서버)내부에서 실행
+       - java server page[JSP]
+   - Controller : servlet으로 개발
+     ㆍ servlet 특징 : 자바 코드로 개발, 정해진 규칙, jsp의 원조
+     ㆍ Spring은 자체적으로 Servlet을 확장해서 main controller 기능 제공 
+     
+5. CRUD
+   - C : Create(db 관점 존재하는 테이블에 insert) - 중복데이터 불허 즉 무결성 검증
+   - R : Read(db 관점, 데이터 검색, select, query) - 데이터 있다면 검색, 없다면 검색 불가
+   - U : Update(db 관점, 데이터 수정) - 존재할 경우 수정, 미존재할 경우 수정 불가
+   - D : Delete(db 관점, 데이터 삭재) - 존재할 경우 삭제, 미존재할 경우 삭제 불가
+
+
+
+ 
