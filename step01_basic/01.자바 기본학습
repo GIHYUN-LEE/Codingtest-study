@@ -25,12 +25,93 @@
      ㆍ servlet 특징 : 자바 코드로 개발, 정해진 규칙, jsp의 원조
      ㆍ Spring은 자체적으로 Servlet을 확장해서 main controller 기능 제공 
      
-5. CRUD
+6. CRUD
    - C : Create(db 관점 존재하는 테이블에 insert) - 중복데이터 불허 즉 무결성 검증
    - R : Read(db 관점, 데이터 검색, select, query) - 데이터 있다면 검색, 없다면 검색 불가
    - U : Update(db 관점, 데이터 수정) - 존재할 경우 수정, 미존재할 경우 수정 불가
    - D : Delete(db 관점, 데이터 삭재) - 존재할 경우 삭제, 미존재할 경우 삭제 불가
 
-
-
+7. 배열
+   1. python - list/ js
+   2. java
+      ㆍ 문법 : []
+      ㆍ 한번 생성시킨 배열 크기는 불변
+         - 데이터 개수가 동적으로 변경될 경우엔 사용 금지
+           (이때, java.util package에서 제공하는 list 계열의 클래스를 사용)
+      ㆍ 모든 배열은 무조건 객체
+      ㆍ 생성된 배열은 length라는 크기값을 보유한 속성이 자동 생성됨
+      ㆍ int [] i; int 배열 객체를 저장 가능한 참조 객체 타입의 변수
+      ㆍ 객체 저장되는 메모리 : heap / 실시간 모니터링해서 가비지 콜렉터에 버림
+      
+ *stack 영역에 로컬변수들이 저장된다!
  
+ *int i =10; // stack에 저장
+  int [] i2 = new int[0]; // i2 변수는 stack 메모리에 저장됨
+                          // i2가 참조하는 int[]객체는 heap에 저장
+---------------------------------------------------------------------
+<상속>
+
+1. 클래스 간의 상속
+2. 부모클래스, 자식 클래스의 관계
+   ㆍ 변수와 메소드만 상속
+      - 데이터 변경 가능
+      - 메소드 {} 수정(재정의(overriding))
+         - 다중정의: 하나의 클래스에서 이름이 동일한 생성자 혹은 메소드에 적용(단, 파라미터는 달라야함)
+         - 재정의 : 상속 관계에서의 메소드상에서만 적용
+3. 문법
+   ㆍclass 자식클래스명 extends 부모클래스명{
+   		상속받은 변수, 메소드
+   		자식클래스만의 생성자와 메소드, 변수..
+     }
+4. 장점
+   ㆍextends 키워드만으로 멤버 변수와 메소드 받음
+5. 필수 암기사항
+   1. java.lang.object(패키지임)가 최상위 root 클래스
+   2. 모든 class들은 object의 메소드들을 상속받는 상황
+       11개 중에 두가지만 고려
+       public String toString(){
+       		Object 클래스 내의 로직
+       		객체의 위치값을 문자열로 가공해서 반환
+       		상속받는 클래스에서 필요에 의해 재정의
+       			- 주로 멤버 변수들값 결합해서 하나로 반환
+       			)
+       			
+       public boolean equals(Object v){
+       		Object 클래스 내의 로직
+       		객체를 받고 이 메소드를 보유한 객체가 같은 객체인지 주소값 비교
+       		== 연산자가 동일한 기능을 수행
+       		따라서 하위클래스들은 주로 타입이 동일한 객체들의 데이터값 비교
+       		}
+   3.    		
+   
+[주요 키워드]
+int, char, double
+byte, short, long, float, boolean
+public, private
+void, return
+static
+class, package, import(패키지 가져오는 칭구)
+for
+if
+extends
+this
+super[super([..]), super.]
+
+[애노테이션]
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Test - Junit
+@Builder
+@NonNull
+
+[연산자]
++ : 더하기, 결합연산자
+= : 대입
+. : dot(접근연산자)
++= : 1증가
+++ : 1증가
+new : 객체 생성 연산자
+!= : 다를때 true
+== : 동등 비교 연산자
