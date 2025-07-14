@@ -20,6 +20,8 @@ public class Controller {
 	
 	//모든 검색 메소드
 	//데이터 정상 비정상 검증 : null 값으로 간단하게 진행
+	
+
 	public static void getEmployees() {
 		Employee[] data=model.getEmployee();
 		

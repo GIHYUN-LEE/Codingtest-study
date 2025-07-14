@@ -2,16 +2,22 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="javax.annotation.processing.Generated"/>
     <fullyQualifiedTypeName name="step02.Methodlab"/>
-    <fullyQualifiedTypeName name="model.Model"/>
-    <fullyQualifiedTypeName name="org.junit.Test"/>
     <fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
     <fullyQualifiedTypeName name="lombok.Builder"/>
     <fullyQualifiedTypeName name="step04.builder.Customer"/>
     <fullyQualifiedTypeName name="lombok.NonNull"/>
     <fullyQualifiedTypeName name="step05.oop.People"/>
-    <fullyQualifiedTypeName name="lombok.Getter"/>
-    <fullyQualifiedTypeName name="lombok.Setter"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="domain.Medicine"/>
+    <fullyQualifiedTypeName name="org.junit.Test"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="controller.Controller"/>
+    <fullyQualifiedTypeName name="model.Database"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="view.InputView"/>
+    <fullyQualifiedTypeName name="controller.SearchMedicine"/>
+    <fullyQualifiedTypeName name="view.SearchView"/>
+    <fullyQualifiedTypeName name="model.Model"/>
 </qualifiedTypeNameHistroy>
