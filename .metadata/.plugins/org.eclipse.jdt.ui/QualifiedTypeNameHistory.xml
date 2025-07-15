@@ -19,5 +19,17 @@
     <fullyQualifiedTypeName name="view.InputView"/>
     <fullyQualifiedTypeName name="controller.SearchMedicine"/>
     <fullyQualifiedTypeName name="view.SearchView"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.beans.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="lombok.ToString"/>
+    <fullyQualifiedTypeName name="util.DBUtill"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.security.KeyStore.TrustedCertificateEntry"/>
+    <fullyQualifiedTypeName name="model.domain.Employee"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="model.MedicineDAO"/>
     <fullyQualifiedTypeName name="model.Model"/>
 </qualifiedTypeNameHistroy>

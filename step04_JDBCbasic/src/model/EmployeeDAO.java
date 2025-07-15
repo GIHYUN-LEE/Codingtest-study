@@ -2,32 +2,100 @@
  * employee table과 1:1 매핑되는 DB연동 전담 클래스
  * crud
  * Data Access Object[DA0] pattern
- *
+ * 
  */
+
 package model;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 import org.junit.Test;
+
 import model.domain.Employee;
 import util.DBUtill;
+import view.FailView;
+import view.SuccessView;
+
 public class EmployeeDAO {
 	
 	private static EmployeeDAO model = new EmployeeDAO();
 	
-//	private EployeeDA0() {}
+//	private EmployeeDAO() {} 
 	
 	public static EmployeeDAO getModel() {
 		return model;
 	}
+	
+	
+	/* 브라우저에 입력한 데이터 -> controller -> DAO -> DB
+	 * 방법1 : int empno, String ename, int deptno 데이터 전송해서 저장
+	 * 방법2 : int empno, String ename, int deptno 데이터 받아서 Employee 객체 생성 후 DAO에게 insert
+	 * 
+	 * Spring의 자동 완성 기능
+	 * - 사용자가 브라우저로 입력하는 데이터를 Controller의 메소드에서 받을 때,
+	 *   : Employee 객체 처럼 자동 객체화 수행 : 42번줄
+	 */
+	
+	
+//	public static void insertOracle(Employee emp) {}
+	public static boolean insertOracle(Employee emp) throws SQLException {
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		
+		try {
+			conn=DBUtill.getConnection();
+			pstmt=conn.prepareStatement("insert into employee values(?,?,?)");
+			
+			pstmt.setInt(1, emp.getEmpno());
+			pstmt.setString(2, emp.getEname());
+			pstmt.setInt(3, emp.getDeptno());
+			
+			int result=pstmt.executeUpdate();
+			
+			if(result==1) {
+				return true;
+			}
+		} finally { // finally는 무조건 실행
+			DBUtill.close(conn, pstmt);
+		}
+		return false;
+	}
+	
+	public static boolean updateOracle(int deptno, int empno) throws SQLException {
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		
+		try {
+			conn=DBUtill.getConnection();
+			pstmt=conn.prepareStatement("update employee set deptno=? where empno=?");
+			
+			pstmt.setInt(1, deptno);
+			pstmt.setInt(2, empno);
+			
+			int result=pstmt.executeUpdate();
+			
+			if(result==1) {
+				return true;
+			}
+		} finally { // finally는 무조건 실행
+			DBUtill.close(conn, pstmt);
+		}
+		return false;
+	}
+	
+	
+	
 	/*
 	 * 모든 직원 정보 반환
 	 * - 가변적인 직원수
 	 * - 직원별 1:1 Employee 객체 생성
 	 * - 모든 직원인 모든 Employee 객체를 한번에 반환 : ArraryList? 배열?
-	 * - select * from employee
+	 * - select * from employee 
 	 * 		empno/ename/deptno
 	 */
 		
@@ -41,13 +109,6 @@ public class EmployeeDAO {
 		
 		try {
 			conn = DBUtill.getConnection();
-			
-			
-			pstmt=conn.prepareStatement("select * from employee where deptno=?");
-			pstmt.setInt(1,deptno);  // 첫번째 물음표에 deptno값 대입을 의미
-			rs=pstmt.executeQuery("select * from employee");
-			
-			
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("select * from employee");
 			
@@ -107,8 +168,9 @@ public class EmployeeDAO {
 //		return sameDeptno; //해당 직원만 저장된 배열 반환
 //	}
 //}
+
 	
-	public static ArrayList<Employee> getDeptnoEmployee(int i) throws Exception {
+	public static ArrayList<Employee> getDeptnoEmployee(int deptno) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -118,8 +180,11 @@ public class EmployeeDAO {
 		
 		try {
 			conn = DBUtill.getConnection();
-			pstmt = conn.????();
-			rs =pstmt.executeQuery("select * from employee");
+			
+			//select만 가능한 객체 생성
+			pstmt = conn.prepareStatement("select * from employee where deptno=?");
+			pstmt.setInt(1, deptno);  //첫번째 물음표에 deptno값 대입 의미
+			rs = pstmt.executeQuery(); // 실제 DB에 select 수행
 			
 			all = new ArrayList<>();//10개씩 메모리 증가하는 동적 메모리 todtjd
 			
@@ -134,4 +199,8 @@ public class EmployeeDAO {
 		}
 		return all;
 	}
+	
+	
+	
+	
 }
